@@ -1,24 +1,30 @@
-import logo from './logo.svg';
+import React, { Fragment } from 'react';
+import ReactDOM from 'react-dom';
+import 'antd/dist/antd.css';
 import './App.css';
+import { Layout,Input,Button } from 'antd';
+import { SearchOutlined, StarFilled } from '@ant-design/icons';
+const { Header, Footer, Content } = Layout;
 
 function App() {
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Layout>
+      <Header > Header </Header>
+      <Content>
+        <Input placeholder="Search for products" >
+      </Input>
+      <Button type="primary" shape='round' icon={<SearchOutlined />}>
+            Search
+          </Button>
+
+           <Button type="primary" >
+          New Product
+        </Button>
+        <Button type="primary" icon={<StarFilled />}  />
+      </Content>
+      <Footer>Footer</Footer>
+    </Layout>
   );
 }
 
